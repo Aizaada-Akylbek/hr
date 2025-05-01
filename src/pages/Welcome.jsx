@@ -2,13 +2,13 @@ import { useState } from "react"
 import Hr from "../components/hr/Hr"
 import User from "../components/user/User"
 
-const Welcome = () => {
-    const [isHR, setIsHR]=useState(true)
+const Welcome = ({getUser}) => {
+    const [isHR, setIsHR]=useState(false)
 
   return (
     <div className="secondary-box">
         {isHR && <Hr/>}
-        {!isHR && <User/>}
+        {!isHR && <User id={getUser}/>}
     </div>
 
   )
